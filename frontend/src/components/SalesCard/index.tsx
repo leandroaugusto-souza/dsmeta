@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Sale } from "../../models/sale";
 import { BASE_URL } from "../../utils/request";
+import NotificationButton from "../NotificationButton";
 import "./styles.css";
 
 function SalesCard() {
@@ -55,6 +56,7 @@ function SalesCard() {
               <th>Visitas</th>
               <th>Vendas</th>
               <th>Total</th>
+              <th>Notificar</th>
             </thead>
             <tbody>
               {sales.map((sale) => {
@@ -66,6 +68,11 @@ function SalesCard() {
                     <td className="show992">{sale.visited}</td>
                     <td className="show992">{sale.deals}</td>
                     <td>R$ {sale.amount.toFixed(2)}</td>
+                    <td>
+                      <div className="dsmeta-red-btn-container">
+                        <NotificationButton saleId={sale.id} />
+                        </div>
+                    </td>     
                   </tr>
                 );
               })}
