@@ -50,6 +50,7 @@ function SalesCard() {
         <div>
           <table className="dsmeta-sales-table">
             <thead>
+              <tr>
               <th>ID</th>
               <th>Data</th>
               <th>Vendedor</th>
@@ -57,6 +58,7 @@ function SalesCard() {
               <th>Vendas</th>
               <th>Total</th>
               <th>Notificar</th>
+              </tr>
             </thead>
             <tbody>
               {sales.map((sale) => {
